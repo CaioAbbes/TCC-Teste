@@ -1,0 +1,42 @@
+﻿@model RestauranteTcc.Models.Pagamento
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Teste</h2>
+
+@using (Html.BeginForm()) //inicio do form
+{
+    @Html.ValidationSummary(true) //gera uma lista de mensagens da validação do objeto, ou seja, verifica se os dados são validos, e joga eles para o controller
+<fieldset>
+    <legend>Dados do Usuario</legend>
+
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.IdPag)
+    </div>
+
+
+    <div class="editor-field">
+        @Html.EditorFor(m => m.IdPag)
+        @Html.ValidationMessageFor(m => m.IdPag) @* Verifica a validação*@
+    </div>
+
+
+    <div class="editor-label">
+        @Html.LabelFor(m => m.FormPag)
+    </div>
+
+
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FormPag)
+        @Html.ValidationMessageFor(m => m.FormPag)
+    </div>
+
+
+
+    <p><input type="submit" value="Cadastrar" /></p>
+
+</fieldset>
+
+    @section Scripts {@Scripts.Render("~/bundles/jqueryval")}//Verifica se a url esta valida
+}
